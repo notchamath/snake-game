@@ -27,8 +27,15 @@ while is_game_on:
     time.sleep(0.1)
     snake.move()
 
+    # If snake eats, increase score by 1 and increase length of snake
     if snake.head.distance(food) < 15:
         food.refresh()
         scoreboard.increase_score()
+
+    # End game if collide with wall
+    if snake.head.xcor() > 280 or snake.head.xcor() < -300 or snake.head.ycor() > 300 or snake.head.ycor() < -290:
+        is_game_on = False
+        scoreboard.game_over()
+
 
 screen.exitonclick()
