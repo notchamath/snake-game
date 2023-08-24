@@ -38,5 +38,10 @@ while is_game_on:
         is_game_on = False
         scoreboard.game_over()
 
+    # End game if collide with snake's own body
+    for segment in snake.snake_body[1:]:
+        if snake.head.distance(segment) < 10:
+            is_game_on = False
+            scoreboard.game_over()
 
 screen.exitonclick()

@@ -43,7 +43,7 @@ class Snake:
             self.head.setheading(LEFT)
 
     def grow(self):
-        self.make_new_segment(self.head.pos())
+        self.make_new_segment(self.snake_body[-1].pos())
 
     def make_new_segment(self, position):
         body_segment = Turtle("square")
