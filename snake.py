@@ -52,3 +52,11 @@ class Snake:
         self.snake_body.append(body_segment)
 
         body_segment.goto(position)
+
+    def reset_snake(self):
+        for seg in self.snake_body:
+            seg.goto(1000, 1000)
+        self.snake_body.clear()
+
+        self.create_snake()
+        self.head = self.snake_body[0]
